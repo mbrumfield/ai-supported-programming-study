@@ -1,2 +1,6 @@
+# # <span id="cc-3yBNG7PDAA">`.gitignore` -- files for Git to ignore</span>
+#
 # Microsoft Office lock files
 ~$*
+
+# CodeChat Editor lexer: python.
