@@ -71,3 +71,4 @@ Implementation
 * TypeScript
 * Vue.js using the Composition API.
 * PrimeVue v4 for controls
+* Implement this on StackBlitz, then provide a link to the resulting site.
