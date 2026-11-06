@@ -9,15 +9,14 @@ Lab 4 Design Specification
 
 This purpose of this program is to calculate the average of a specified course
 based on the assignment scores the user enters. The user will select a course
-from a given list and enter any number of assignment scores that will be used
-for the calculation of the average. The course name, average rounded to two
-decimal places, and the letter grade will be displayed on the screen to the
-user.
+from a given list and enter five assignment scores that will be used for the
+calculation of the average. The course name, average rounded to two decimal
+places, and the letter grade will be displayed on the screen to the user.
 
 **Inputs**
 
-The program will take the course name and test scores as the inputs. Below are
-the details for each input.
+The program will take the course name and five assignment scores as the inputs.
+Below are the details for each input.
 
 | Input          | Data Type | Valid Values                                                                                          | Validation Behavior                                                                                            |
 | -------------- | --------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -90,8 +89,10 @@ the average rounded by two decimal places, and the letter grade.
   * Otherwise
     * Calcualate the average
       * average = (score1 + score2 + score3 + score4 + score5) / 5
-    * Use if-else statements to determine the letter grade specified in the Processing section
-    * Display the course, average formatted in two decimal places, and the letter grade
+    * Use if-else statements to determine the letter grade specified in the
+      Processing section
+    * Display the course, average formatted in two decimal places, and the
+      letter grade
 
 ### Language and Enviroment
 
@@ -101,8 +102,8 @@ the average rounded by two decimal places, and the letter grade.
 
 **Test Cases**
 
-| Test Case | Menu Choice | Score 1 | Score 2 | Score 3 | Score 4 | Score 5 | Course Display | Average | Letter Grade | Test Passed? (Y/N) |
-| --------- | ----------- | ------- | ------- | ------- | ------- | ------- | -------------- | ------- | ------------ | ------------------ |
-| 1 | 2 | 95 | 88 | 92 | 85 | 90 | MAT 131 - College Algebra | 90 | A | Y |
-| 2 | 1	| 75 | 70 | 80 | 72 | 78 | CSC 221 - Fundamental Programming I | 75 | C | Y |
-| 3	| 3	| 85 | 90 | 105 | 88 | 92 | BIO 111 - General Biology | N/A | N/A | Y| 
+| Test Case | Menu Choice | Score 1 | Score 2 | Score 3 | Score 4 | Score 5 | Course Display                      | Average | Letter Grade | Test Passed? (Y/N) |
+| --------- | ----------- | ------- | ------- | ------- | ------- | ------- | ----------------------------------- | ------- | ------------ | ------------------ |
+| 1         | 2           | 95      | 88      | 92      | 85      | 90      | MAT 131 - College Algebra           | 90      | A            | Y                  |
+| 2         | 1           | 75      | 70      | 80      | 72      | 78      | CSC 221 - Fundamental Programming I | 75      | C            | Y                  |
+| 3         | 3           | 85      | 90      | 105     | 88      | 92      | BIO 111 - General Biology           | N/A     | N/A          | Y                  |
