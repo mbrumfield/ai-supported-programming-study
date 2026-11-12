@@ -64,6 +64,10 @@ specification.)
 
 (Put the last review from Gemini here.)
 
+### Screenshot
+
+![A screenshot of the resulting app](screenshot.png)
+
 Inputs
 ------
 
@@ -109,7 +113,7 @@ The grading scale is as follows:
 Post-lab
 --------
 
-Submit this file with your edits to your instructor.
+Submit this file with your edits and your screenshot to your instructor.
 
 Learning objectives
 -------------------
