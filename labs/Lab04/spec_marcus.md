@@ -1,109 +1,139 @@
-Name: Marcus Brumfield
-
-Date: 10/14/2026
-
 Lab 4 Design Specification
 ==========================
 
-**Purpose**
+Name: Marcus Brumfield Date: 11/16/2026
 
-This purpose of this program is to calculate the average of a specified course
+Purpose
+-------
+
+The purpose of this program is to calculate the average of a specified course
 based on the assignment scores the user enters. The user will select a course
-from a given list and enter five assignment scores that will be used for the
-calculation of the average. The course name, average rounded to two decimal
-places, and the letter grade will be displayed on the screen to the user.
+from a given list and enter up to five assignment scores to calculate the
+average. The course name, average rounded to two decimal places, and letter
+grade will be displayed on the screen.
 
-**Inputs**
+Inputs
+------
 
-The program will take the course name and five assignment scores as the inputs.
-Below are the details for each input.
+| Input            | Data Type          | Valid Values                                                                              | Validation Behavior                                                                                      |
+| ---------------- | ------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Course Selection | Dropdown Selection | CSC 221 - Fundamental Programming I, MAT 131 - College Algebra, BIO 111 - General Biology | Display an error message if no course is selected. Prevent calculation until a valid course is selected. |
+| score1 - score5  | Number             | 0-100                                                                                     | Catch cases where a number is out of range or is not a number (e.g., char, string, etc.)                 |
 
-| Input          | Data Type | Valid Values                                                                                          | Validation Behavior                                                                                            |
-| -------------- | --------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| course\_choice | int       | 1 = CSC 221 - Fundamental Programming I, 2 = MAT 131 - College Algebra, 3 = BIO 111 - General Biology | Display an error message if the user enters a number other than 1-3                                            |
-| score1         | double    | 0-100                                                                                                 | Display an error message if a number is out or range or a value other than a number (e.g., char, string, etc.) |
-| score2         | double    | 0-100                                                                                                 | Display an error message if a number is out or range or a value other than a number (e.g., char, string, etc.) |
-| score3         | double    | 0-100                                                                                                 | Display an error message if a number is out or range or a value other than a number (e.g., char, string, etc.) |
-| score4         | double    | 0-100                                                                                                 | Display an error message if a number is out or range or a value other than a number (e.g., char, string, etc.) |
-| score5         | double    | 0-100                                                                                                 | Display an error message if a number is out or range or a value other than a number (e.g., char, string, etc.) |
+Processing
+----------
 
-**Processing**
+### Average Calculation
 
-The average will be calculated by adding the four valid test scores and then
-divide the total by five (5). Below is the formula to calculate the average.
+The average is calculated by adding the valid test scores, then dividing the
+total by the number of scores entered. Below is an example formula to calculate
+the average.
 
-$average = (score1 + score2 + score3 + score4 + score5) / 5$
+<strong>Formula:</strong>
+
+```text
+average = (sum of all scores)/(number of scores)
+```
 
 Based on the average, the program will check the letter grade with the following
 grading scale:
 
-| Average                  | Letter Grade |
-| ------------------------ | ------------ |
-| average >= 90 and <= 100 | A            |
-| average >= 80 and < 90   | B            |
-| average >= 70 and < 80   | C            |
-| average >= 60 and < 70   | D            |
-| average < 60             | F            |
+| Average  | Letter Grade |
+| -------- | ------------ |
+| 90-100   | A            |
+| 80-89.99 | B            |
+| 70-79.99 | C            |
+| 60-69.99 | D            |
+| Below 60 | F            |
 
-### Problem Statement
+### Business Rules
 
-In this program, the user will choose a course and enter five valid assignment
-scores, where the average will be calculated and display the letter grade.
+1. At least one valid score must be entered before calculating an average.
+2. Blank score fields are ignored and are not included in the average
+   calculation.
+3. The average must be displayed with exactly two decimal places.
+4. Only valid scores are included in calculations.
+5. The letter grade is determined from the calculated average.
 
-### Requirements
+Outputs
+-------
 
-The user shoud only be able to enter a valid course and each assignment score
-has to be within the range of 0-100. Any invalid input should display an error
-message and safely end the program.
+The application will display:
 
-The user will first display a menu with the courses and corresponding number
-choices. If the user enters an input ouside of the choices or a non-numeric
-number, an error message will be displayed and the program will end. If the
-input is valid, the user will be asked to enter the assignment scores. If any of
-the assignment scores are outside of the range of 0-100 or a non-numeric number
-is entered, an error message will be displayed and the program will end.
+* Selected course name
+* Assignment scores entered
+* Average rounded to two decimal places
+* Letter grade
+* Validation messages (when applicable)
 
-Given the user enters valid input for the course and each of the scores, the
-program will then calculate the average. The output will be the course details,
-the average rounded by two decimal places, and the letter grade.
+Requirements
+------------
 
-### Program Design
+### User Interface Requirements
 
-**Pseudocode**
+* Provide a dropdown list containing the available courses.
+* Provide five score input fields.
+* Provide a Calculate Average button.
+* Provide a Reset button that clears all fields and results.
+* Provide a Save to CSV button.
+  * The file name should be YYYY-MM-DD\_CourseSelection.csv
 
-* Display the menu for the courses and ask the user to enter a choice using a
-  switch statement
-  * If the user enters 1, the course variable is set equal to "CSC 221 -
-    Fundamental Programming I"
-  * If the user enters 2, the course variable is set equal to "MAT 131 - College
-    Algebra"
-  * If the user enters 3, the course variable is set equal to "BIO 111 - General
-    Biology"
-  * Any other input, display a meddage stating that the input is invalid and end
-    the program
-* Ask the user for five scores
-  * If any of the scores are non-numeric, display a message that the scores must
-    be numeric and end the program
-  * If any of the scores are outside the range of 0-100, display a message that
-    the scores must be between the range and end the program
-  * Otherwise
-    * Calcualate the average
-      * average = (score1 + score2 + score3 + score4 + score5) / 5
-    * Use if-else statements to determine the letter grade specified in the
-      Processing section
-    * Display the course, average formatted in two decimal places, and the
-      letter grade
+### Validation Requirements
 
-### Language and Enviroment
+* A course must be selected from the dropdown before the average can be
+  calculated. If no course is selected, display a validation message and prevent
+  calculation.
+  * Initial state: "Select a Course" (this should not be treated as a valid
+    option)
+* Score values must be numeric.
+* Score values must be between 0 and 100 inclusive.
+* Invalid fields must display a visual indicator and an explanatory message.
+* The application must prevent calculation when invalid data exists.
 
-* C++ 26
+### Functional Requirements
 
-### Acceptance Criteria
+When the user selects a valid course and enters one or more valid scores:
 
-**Test Cases**
+1. Calculate the average when the user selects the Calculate Average button
+2. Round the average to two decimal places.
+   * Display the average rounded to two decimal places using standard rounding.
+3. Determine the letter grade.
+4. Display the course name, average, and letter grade.
+5. Allow the results to be exported to a CSV file containing the following
+   columns:
+   * Course Name
+   * Score 1
+   * Score 2
+   * Score 3
+   * Score 4
+   * Score 5
+   * Average
+   * Letter Grade
+6. Any input left blank by the user should have a blank value in the CSV.
 
-| Test Case | Menu Choice | Score 1 | Score 2 | Score 3 | Score 4 | Score 5 | Course Display                      | Average | Letter Grade | Test Passed? (Y/N) |
-| --------- | ----------- | ------- | ------- | ------- | ------- | ------- | ----------------------------------- | ------- | ------------ | ------------------ |
-| 1         | 2           | 95      | 88      | 92      | 85      | 90      | MAT 131 - College Algebra           | 90      | A            | Y                  |
-| 2         | 1           | 75      | 70      | 80      | 72      | 78      | CSC 221 - Fundamental Programming I | 75      | C            | Y                  |
-| 3         | 3           | 85      | 90      | 105     | 88      | 92      | BIO 111 - General Biology           | N/A     | N/A          | Y                  |
+Technology Stack
+----------------
+
+* Language: JavaScript
+* Markup: HTML5
+* Styling: CSS3
+
+Folder Structure
+----------------
+
+```text
+Lab4Project/
+│
+├── index.html
+├── style.css
+└── main.js
+```
+
+Review rounds table
+-------------------
+
+| Round | Number of findings | Main changes made                                                                                                                                                                                                                                                                                                                                                                       | Suggestions rejected with explanation                                                                                                                                                                                                                                                                                   |
+| ----- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | 10                 | Fixed Markdown formatting; reorganized sections; added Outputs section; clarified average calculation; added minimum-score requirement; clarified handling of blank score fields; made grade ranges explicit; expanded validation requirements; added UI requirements; clarified rounding behavior; added business rules and functional workflow; improved folder structure formatting. | None. All identified findings were incorporated into the revised specification.                                                                                                                                                                                                                                         |
+| 2     | 8                  | Specified the functional requirements to add a Calculate Average button; Added the specification of using Math.round() for calculating the average; Updated the course selection text to refelct the dropdown functionality; Added the CSV file name structure                                                                                                                          | 4: Average formula formatting is broken; Missing output format examples; Technology Stack section is incomplete; Folder structure formatting is not Markdown-friendly. These suggestions were rejected because The format does not appear to be broken and the suggestions are more superficial than implemtaton-based. |
+| 3     | 4                  | Updated rounding requirement; Added bullet point for UI for the dropdown list; Updated Technology Stack section; Specified the CSV format                                                                                                                                                                                                                                               | None. All identified findings were incorporated into the revised specification.                                                                                                                                                                                                                                         |
