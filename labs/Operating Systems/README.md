@@ -119,9 +119,9 @@ Boot up your Linux VM (Ubuntu or Linux Mint) and perform the following:
 
 * <strong>Python Script Execution:</strong>
 
-```python
-python3 deploy_gt_yummy.py
-```
+    ```python
+    python3 deploy_gt_yummy.py
+    ```
 
 ### Part 5: Reflection
 
