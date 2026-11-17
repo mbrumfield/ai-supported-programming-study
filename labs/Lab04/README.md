@@ -59,7 +59,11 @@ code.
       update this specification then re-generate the app.
    4. Take a screenshot of your app; name it `screenshot.png` and place it in
       the same directory as this file.
-5. Submit this file with your edits and your screenshot to your instructor.
+   5. Change the "Implementation" section to "Implement this program in Python."
+      Paste the plain text of this file into
+      [Gemini](https://gemini.google.com/), then copy and paste the resulting
+      code to your computer. Run the program.
+5. Submit this file with your edits and your screenshot to Canvas.
 
 ### Review rounds table
 
@@ -120,35 +124,7 @@ The grading scale is as follows:
 * 60 - 69 = D
 * Below 60 = F
 
-Learning objectives
--------------------
+Implementation
+--------------
 
-This should not be given to students; it's only for instructors.
-
-* Incorrect specifications: the grading scale doesn't specify grades between 89
-  and 90, etc.
-* User interface layout: grade entry, average, letter grade, reset button
-  locations.
-* Does reset clear the course selection, or only the scores? The prompt says
-  "clears all selections."
-* What happens with non-numeric input, decimals, or an empty field?
-* Corner cases: the displayed average and letter grade must not contradict each
-  other. If the average is 89.8 but the UI rounds to 90, the letter grade
-  displays as a B.
-* Updates: should averages be updated as they're typed, as they're committed, or
-  only after a button press?
-* Rounding: should the average be displayed as a whole number? If not, how many
-  decimal places? How many decimal places for raw scores?
-* No input: what should the program display when no scores are entered?
-* Unstated: what is the role of the course selector? What should it do when
-  changed?
-* Partial input: what happens with 1-4 scores? That's a different case from no
-  input at all.
-* Invalid input: should out-of-range values be blocked as they're typed, or
-  rejected with an error message?
-* Switching courses: should scores be kept separately for each course?
-* Accessibility:
-  * Can everything be done with the keyboard alone?
-  * Is each input tied to its label?
-  * Do screen readers announce errors and changes to the result?
-* Responsive design: how should the layout change with screen size?
+* Implement this program in JavaScript, HTML5, and CSS3.
