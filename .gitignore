@@ -2,5 +2,7 @@
 #
 # Microsoft Office lock files
 ~$*
+# Mac stuff
+**/.DS_Store
 
 # CodeChat Editor lexer: python.
